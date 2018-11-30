@@ -1,4 +1,4 @@
-package com.buka.algorithm;
+package com.buka.algorithm.strings;
 
 import java.util.Arrays;
 

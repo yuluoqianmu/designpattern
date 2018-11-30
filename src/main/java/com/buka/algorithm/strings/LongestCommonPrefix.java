@@ -1,4 +1,4 @@
-package com.buka.algorithm;
+package com.buka.algorithm.strings;
 
 /**
  * Created by shaomaolin on 2018/11/25.
