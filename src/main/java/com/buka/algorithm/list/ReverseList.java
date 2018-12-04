@@ -6,35 +6,17 @@ package com.buka.algorithm.list;
 public class ReverseList {
 
     public static class ListNode {
-        private String data;
-        private ListNode next;
-
-        public ListNode(String data) {
-            this.data = data;
-        }
-        public String getData() {
-            return data;
-        }
-
-        public void setData(String data) {
-            this.data = data;
-        }
-
-        public ListNode getNext() {
-            return next;
-        }
-
-        public void setNext(ListNode next) {
-            this.next = next;
-        }
-    }
+      int val;
+      ListNode next;
+      ListNode(int x) { val = x; }
+  }
 
 
     public static ListNode reverseList(ListNode head) {
         if (head == null)
             return null;
 
-        if (head.getNext() == null)
+        if (head.next == null)
             return head;
 
         //上一个节点
@@ -43,8 +25,8 @@ public class ReverseList {
         ListNode curNode = head;
 
         while(curNode != null) {
-            ListNode nextNode = curNode.getNext();
-            curNode.setNext(preNode);
+            ListNode nextNode = curNode.next;
+            curNode.next = preNode;
             preNode = curNode;
             curNode = nextNode;
 
@@ -53,31 +35,31 @@ public class ReverseList {
     }
 
     public static ListNode reverseList2(ListNode head) {
-       if (head == null || head.getNext() == null)
+       if (head == null || head.next == null)
            return head;
 
-       ListNode nextNode = head.getNext();
-       head.setNext(null);
+       ListNode nextNode = head.next;
+       head.next = null;
        ListNode reverseHead = reverseList2(nextNode);
-       nextNode.setNext(head);
+       nextNode.next = head;
        return reverseHead;
     }
 
 
     public static void main(String[] args) {
-        ListNode node1 = new ListNode("1");
-        ListNode node2 = new ListNode("2");
-        ListNode node3 = new ListNode("3");
-        ListNode node4 = new ListNode("4");
-        node1.setNext(node2);
-        node2.setNext(node3);
-        node3.setNext(node4);
+        ListNode node1 = new ListNode(1);
+        ListNode node2 = new ListNode(2);
+        ListNode node3 = new ListNode(3);
+        ListNode node4 = new ListNode(4);
+        node1.next = node2;
+        node2.next = node3;
+        node3.next = node4;
         ListNode head = node1;
 
-        ListNode newHead = reverseList2(head);
+        ListNode newHead = reverseList(head);
         while(newHead != null) {
-            System.out.print("data :" + newHead.getData() + "\n");
-            newHead = newHead.getNext();
+            System.out.print("data :" + newHead.val + "\n");
+            newHead = newHead.next;
 
         }
 
