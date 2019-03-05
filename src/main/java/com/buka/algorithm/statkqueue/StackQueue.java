@@ -25,6 +25,7 @@ public class StackQueue {
     public Integer deQueue() {
         if (stackB.isEmpty()) {
             if (stackA.isEmpty()) {
+
                 return null;
             }
 
