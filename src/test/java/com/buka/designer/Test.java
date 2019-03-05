@@ -1,6 +1,7 @@
 package com.buka.designer;
 
 import java.util.HashMap;
+import java.util.TreeMap;
 
 /**
  * Created by shaomaolin on 2018/12/5.
@@ -8,7 +9,9 @@ import java.util.HashMap;
 public class Test {
 
     public static void main(String[] args) {
-
-        System.out.println(Long.parseLong("61c88647", 16));
+        int i=0;
+        int j = i++;
+        int k = ++i;
+        System.out.println(++i + ++i + i++);
     }
 }

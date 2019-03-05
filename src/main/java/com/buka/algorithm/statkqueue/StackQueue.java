@@ -1,4 +1,4 @@
-package com.buka.designer.statkqueue;
+package com.buka.algorithm.statkqueue;
 
 import java.util.Stack;
 

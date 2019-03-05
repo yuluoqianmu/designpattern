@@ -1,10 +1,12 @@
 package com.buka.algorithm.list;
 
 /**
- * Created by shaomaolin on 2018/12/4.
+ * 反转链表
  */
 public class ReverseList {
-
+    /**
+     * 节点定义
+     */
     public static class ListNode {
       int val;
       ListNode next;
@@ -26,14 +28,22 @@ public class ReverseList {
 
         while(curNode != null) {
             ListNode nextNode = curNode.next;
+            //当前节点的下一个节点等于前一个节点
             curNode.next = preNode;
+            //前一个节点等于当前节点
             preNode = curNode;
+            //当前节点等于next
             curNode = nextNode;
 
         }
         return preNode;
     }
 
+    /**
+     * 递归方式
+     * @param head
+     * @return
+     */
     public static ListNode reverseList2(ListNode head) {
        if (head == null || head.next == null)
            return head;
@@ -45,7 +55,7 @@ public class ReverseList {
        return reverseHead;
     }
 
-
+    //测试
     public static void main(String[] args) {
         ListNode node1 = new ListNode(1);
         ListNode node2 = new ListNode(2);
